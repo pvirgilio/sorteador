@@ -13,13 +13,14 @@ export default function ImgSorteio() {
         type="file"
         name=""
         id=""
-        className="z-30 absolute bg-black opacity-0 max-w-[400px] h-full transition-opacity duration-300 "
+        className="z-30 cursor-pointer absolute bg-black opacity-0 max-w-[400px] h-full transition-opacity duration-300 "
         onChange={(e) => handleInput(e)}
       />
+
+      <span className="bg-orange-500 absolute top-0 text-white  w-full text-center z-30 k pb-1 max-md:bottom-0 max-md:text-[14px] ">
+        Escolha a imagem do sorteio:
+      </span>
       <div className="relative max-w-[400px] w-full h-[400px]  ">
-        <span className="absolute bg-white w-full text-center z-30 text-black pb-1 ">
-          Escolha a imagem do sorteio:
-        </span>
         <Image
           className="rounded-xl"
           src={imageSorteio ? imageSorteio : sorteador}

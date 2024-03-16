@@ -32,6 +32,7 @@ export function Sorteador() {
     setStorageQuantidade(localStorage.getItem("quantidade"));
     setStorageNumeros(localStorage.getItem("totalNumeros"));
   }, []);
+
   return (
     <div className="absolute w-full h-full flex  justify-center items-center">
       {isSubmitted ? (
@@ -45,7 +46,7 @@ export function Sorteador() {
             <h1 className="text-center text-3xl font-bold max-md:text-xl ">
               Sorteador de Rifa
             </h1>
-            <label className="w-full text-left max-md:text-base ">
+            <label className="w-full text-left max-md:text-[14px] ">
               Nome do sorteio/rifa:
             </label>
             <input
@@ -58,9 +59,12 @@ export function Sorteador() {
                 localStorage.setItem("nomeSorteio", e.target.value);
               }}
               value={nomeSorteio ? nomeSorteio : storageName}
+              placeholder="Digite o nome do sorteio"
               required
             />
-            <label className="w-full text-left">Números sorteados:</label>
+            <label className="w-full text-left max-md:text-[14px]">
+              Números sorteados:
+            </label>
             <input
               className="w-full p-3 border border-solid border-[#ccc]"
               onChange={(e) => {
@@ -75,7 +79,9 @@ export function Sorteador() {
               required
             />
 
-            <label className="w-full text-left ">Total de números:</label>
+            <label className="w-full text-left max-md:text-[14px] ">
+              Total de números:
+            </label>
             <input
               className="w-full border border-solid border-[#ccc] p-3"
               type="number"
