@@ -17,10 +17,11 @@ export default function ImgSorteio() {
         onChange={(e) => handleInput(e)}
       />
       <div className="relative max-w-[400px] w-full h-[400px]  ">
-        <span className="absolute bg-white w-full text-center z-30 text-black font-bold">
+        <span className="absolute bg-white w-full text-center z-30 text-black pb-1 ">
           Escolha a imagem do sorteio:
         </span>
         <Image
+          className="rounded-xl"
           src={imageSorteio ? imageSorteio : sorteador}
           alt="Imagem do Sorteio"
           layout="fill"

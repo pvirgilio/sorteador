@@ -7,8 +7,8 @@ export const ImgSorteioContext = createContext();
 export function SorteioProvider({ children }) {
   const [nomeSorteio, setNomeSorteio] = useState("");
   const [numeroSorteado, setNumeroSorteado] = useState([]);
-  const [quantidade, setQuantidade] = useState(1);
-  const [totalNumeros, setTotalNumeros] = useState(100);
+  const [quantidade, setQuantidade] = useState();
+  const [totalNumeros, setTotalNumeros] = useState();
   const [imageSorteio, setImageSorteio] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 

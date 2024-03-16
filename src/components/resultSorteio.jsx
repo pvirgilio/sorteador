@@ -25,13 +25,13 @@ export default function SubmittedComponent() {
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
-      if (nomeSorteio && numeroSorteado.length > 0) {
+      if (nomeSorteio || numeroSorteado.length > 0) {
         setLoading(false);
       }
-    }, 2000);
+    }, 1000);
   }, [nomeSorteio, numeroSorteado]);
   return loading ? (
-    <div className="bg-white w-full h-full flex items-center justify-center">
+    <div className="bg-white p-7 rounded-full flex items-center justify-center ">
       <AiOutlineLoading3Quarters
         className="absolute animate-spin"
         size={40}
@@ -39,49 +39,53 @@ export default function SubmittedComponent() {
       />
     </div>
   ) : (
-    <div className="bg-white">
-      <div className="relative max-w-[400px] w-full h-[400px]  ">
-        <span className="absolute bg-white w-full text-center z-30 text-black font-bold">
+    <div className="bg-white max-w-[600px] w-full flex flex-col gap-10 items-center justify-center p-5 rounded-2xl ">
+      <div className="w-full h-full flex flex-col gap-5 items-center justify-center">
+        <span className=" bg-white text-2xl text-orange-500  text-center z-30  font-bold">
           {nomeSorteio}
         </span>
-        <Image
-          src={imageSorteio ? imageSorteio : sorteador}
-          alt="Imagem do Sorteio"
-          layout="fill"
-          objectFit="cover"
-        />
+        <div className="relative max-w-[250px] w-full  h-[250px]  ">
+          <Image
+            src={imageSorteio ? imageSorteio : sorteador}
+            alt="Imagem do Sorteio"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-xl"
+          />
+        </div>
       </div>
-      <h1 className="text-3xl font-bold text-center">Números sorteados:</h1>
+      <h1 className="text-2xl font-bold text-center text-[">
+        Números sorteados:
+      </h1>
 
       {numeroSorteado.length > 0 && (
-        <div className="mt-1 flex flex-col max-w-[400px] w-full items-center justify-center">
-          <h2 className="">Números sorteados:</h2>
-          <span className=" flex text-center text-lg max-h-[240px] overflow-auto font-bold text-yellow-600">
+        <div className=" flex flex-col max-w-[400px] max-h-[240px] overflow-auto w-full items-center justify-center ">
+          <span className=" flex text-justify text-lg  overflow-auto font-bold text-yellow-600">
             {numeroSorteado.join(",  ")}
           </span>
         </div>
       )}
 
-      <div className="flex flex-col gap-2 items-center justify-center">
+      <div className="flex  gap-2 items-center justify-center">
         <button
-          className="bg-black text-white font-bold p-3 rounded-lg"
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.reload();
             setIsSubmitted(false);
-            setNumeroSorteado([]);
+          }}
+          className="bg-[#4d4d4d] text-white font-bold p-3 rounded-lg"
+        >
+          Voltar para tela inicial
+        </button>
+        <button
+          className="bg-orange-500 text-white font-bold p-3 rounded-lg"
+          onClick={(e) => {
+            sortearNumero(e);
           }}
         >
           Sortear novamente
         </button>
       </div>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          setIsSubmitted(false);
-        }}
-        className="bg-black text-white font-bold p-3 rounded-lg"
-      >
-        Voltar para tela inicial
-      </button>
     </div>
   );
 }
