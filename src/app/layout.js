@@ -15,12 +15,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={clsx(fonte.className, "w-full   ")}>
-        <div className="fixed bg-black bottom-0 z-50 w-full p-5 flex items-center justify-center">
+        <div className="fixed bg-black max-md:bg-gray-700 bottom-0 z-50 w-full p-5 flex items-center justify-center">
           <p className="text-white text-lg">
             Desenvolvido por:{" "}
             <Link
               className="text-blue-600 border-b border-blue-500"
-              href="https://pedrovirgilio.netlify.appp"
+              href="https://pedrovirgilio.netlify.app"
             >
               Pedro Virgilio
             </Link>
