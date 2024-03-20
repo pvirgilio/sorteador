@@ -8,7 +8,7 @@ export default function ImgSorteio() {
   const { imageSorteio, handleInput } = useContext(ImgSorteioContext);
 
   return (
-    <div className="relative group flex flex-col items-center justify-center max-w-[400px] w-full h-[400px]">
+    <div className="relative group flex flex-col items-center justify-center max-w-[400px] w-full h-[400px] max-md:h-[300px] ">
       <input
         type="file"
         name=""
@@ -17,16 +17,17 @@ export default function ImgSorteio() {
         onChange={(e) => handleInput(e)}
       />
 
-      <span className="bg-orange-500 absolute top-0 text-white  w-full text-center z-30 k pb-1 max-md:bottom-0 max-md:text-[14px] ">
+      <span className="bg-orange-500 absolute top-0 text-white w-full text-center z-30  pb-1 max-md:h-[30px] max-md:bottom-0 max-md:text-[14px] ">
         Escolha a imagem do sorteio:
       </span>
-      <div className="relative max-w-[400px] w-full h-[400px]  ">
+      <div className="relative max-w-[400px] w-full h-[400px] max-md:h-[300px]  ">
         <Image
           className="rounded-xl"
           src={imageSorteio ? imageSorteio : sorteador}
           alt="Imagem do Sorteio"
           layout="fill"
           objectFit="cover"
+          loading="lazy"
         />
       </div>
       <div className="absolute w-full h-full flex items-center justify-center  top-0 left-0 opacity-0 group-hover:bg-black group-hover:opacity-50 transition-opacity duration-300">

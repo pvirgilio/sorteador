@@ -40,7 +40,7 @@ export default function SubmittedComponent() {
     </div>
   ) : (
     <div className="bg-white max-w-[600px] w-full flex flex-col gap-10 items-center justify-center p-5 rounded-2xl ">
-      <h1 className="text-xl font-bold">
+      <h1 className="text-xl font-semibold max-md:text-center">
         Parabéns! Estes são os números sorteados do:
       </h1>
       <div className="w-full h-full flex flex-col gap-5 items-center justify-center">
@@ -57,7 +57,7 @@ export default function SubmittedComponent() {
           />
         </div>
       </div>
-      <h1 className="text-2xl font-bold text-center text-[">
+      <h1 className="text-2xl font-semibold text-center text-[">
         Números sorteados:
       </h1>
 
@@ -76,12 +76,12 @@ export default function SubmittedComponent() {
             window.location.reload();
             setIsSubmitted(false);
           }}
-          className="bg-[#4d4d4d] text-white font-bold p-3 rounded-lg"
+          className="bg-[#4d4d4d] text-white font-bold p-3 rounded-lg max-md:text-sm"
         >
           Voltar para tela inicial
         </button>
         <button
-          className="bg-orange-500 text-white font-bold p-3 rounded-lg"
+          className="bg-orange-500 text-white font-bold p-3 rounded-lg max-md:text-sm"
           onClick={(e) => {
             sortearNumero(e);
           }}

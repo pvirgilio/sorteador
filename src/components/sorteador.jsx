@@ -34,12 +34,12 @@ export function Sorteador() {
   }, []);
 
   return (
-    <div className="absolute w-full h-full flex  justify-center items-center">
+    <div className="absolute w-full h-full flex justify-center items-center max-md:items-start ">
       {isSubmitted ? (
         <SubmittedComponent /> // Exibe o componente após o envio do formulário
       ) : (
         <form
-          className=" bg-white max-w-[800px] w-full flex  items-center justify-center  gap-5  border border-solid  border-[#ccc] rounded-xl p-10 shadow-xl max-md:flex-col-reverse max-md:max-w-[500px] max-md:p-5 max-md:border-none "
+          className=" bg-white max-w-[800px] w-full flex  items-center justify-center  gap-5  border border-solid  border-[#ccc] rounded-xl p-10 shadow-xl max-md:flex-col-reverse max-md:max-w-[500px] max-md:p-5 max-md:border-none  "
           onSubmit={sortearNumero}
         >
           <div className="w-full flex flex-col gap-3 items-center justify-center">
