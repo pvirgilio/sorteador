@@ -5,4 +5,4 @@ Sorteador que tem como finalidade sortear números mostrando a foto do prêmio d
 Next js
 
 ## Link: 
-[Preview do meu projeto](https://sorteador-eta.vercel.app/)
+[Preview do meu projeto](https://sorteador-five-alpha.vercel.app/)
